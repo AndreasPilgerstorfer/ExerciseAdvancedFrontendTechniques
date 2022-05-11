@@ -67,6 +67,14 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        },
+        concurrent: {
+            target1: {
+                tasks: ['imagemin', 'sass', 'uglify', 'cssmin'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
         }
     });
 
@@ -76,6 +84,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-concurrent');
 
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin']);       // wird bei grunt ausgeführt
+    grunt.registerTask('default', ['concurrent:target1']);
+    //grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin']);       // wird bei grunt ausgeführt
 };
