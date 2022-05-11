@@ -1,23 +1,22 @@
 /* --------------------------------------------------- Allgemein  ----------------------------------------------------*/
 body{
-  background-color: #20214f ;
+  background-color: hotel-colors(dark-blue) ;
   font-family: 'Roboto', sans-serif;
-
 }
 
-.welcome-header{
+.welcome-header {
   background-image: url("./img/pic01.jpg");
   min-height: 650px;
   background-size: cover;
 }
 
-.welcome-header2{
+.welcome-header2 {
   background-image: url("./img/pic01.jpg");
   min-height: 390px;
   background-size: cover;
 }
 
-.welcome-room{
+.welcome-room {
   background-image: url("./img/pic02.jpg");
   min-height: 650px;
   background-size: cover;
@@ -29,41 +28,41 @@ body{
   background-size: cover;
 }
 
-.welcome-suite{
+.welcome-suite {
   background-image: url("./img/pic04.jpg");
   min-height: 650px;
   background-size: cover;
 }
 
-.custom-bg{
+.custom-bg {
   background-color: rgba(0,0,0, .75);
 }
 
-.px-3{
+.px-3 {
   color: white;
   font-weight: bold;
 }
 
-.wrapper{
+.wrapper {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding: 1em;
 }
 
-.stylehr{
-  background: goldenrod;
+.stylehr {
+  background: hotel-colors(gold);
   height: 0.5em;
   border: none;
   margin-bottom: 2em;
 }
 
-.heading{
+.heading {
   color: white;
 }
 
-.colGol{
-  color: goldenrod;
+.colGol {
+  color: hotel-colors(gold);
 }
 
 .spacer{
@@ -74,24 +73,25 @@ body{
   padding: 1em;
 }
 
-.bold{
+.bold {
   font-weight: bold;
 }
 
 .page-item.active .page-link{
-  background-color: goldenrod;
+  background-color: hotel-colors(gold);
   color: black;
-  border-color: goldenrod;
+  border-color: hotel-colors(gold);
 }
+
 .page-link{
   color: black;
+
+  &:hover, &:focus, &:active {
+    color: black;
+  }
 }
 
-.page-link:hover, .page-link:focus , .page-link:active{
-  color: black;
-}
-
-a{
+a {
   color:black;
 }
 
@@ -122,7 +122,7 @@ a{
   align-items: center;
 }
 
-.fadeout{
+.fadeout {
   animation-name: fade-out;
   animation-duration: 3s;
 }
@@ -143,44 +143,40 @@ a{
 .img-hover {
   overflow: hidden;
 
-}
+  img {
+    transition: transform .5s ease;
+  }
 
-.img-hover img{
-  transition: transform .5s ease;
+  &:hover img {
+    overflow: hidden;
+    transform: scale(1.1);
+  }
 }
-
-.img-hover:hover img{
-  overflow: hidden;
-  transform: scale(1.1);
-}
-
 
 /*  Hover-Button  */
-
-.btnstyle{
-  background-color: goldenrod;
+.btnstyle {
+  background-color: hotel-colors(gold);
   padding: .5em;
   border: none;
   border-radius: 3px;
   transition: background-color .5s ease;
+
+  &:hover, &:active, &:focus {
+    background-color: hotel-colors(beige);
+  }
 }
 
-.btnstyle:hover, .btnstyle:active, .btnstyle:focus{
-  background-color: #DAC089;
-}
 
-
-/* --------------------------------------     Animation 3 (meiner Wahl)  --------------------------------------------*/
+/* --------------------------------------     Animation  --------------------------------------------*/
 
 /*  Animierte Trennlinie  */
 
-.stylehr{
+.stylehr {
   animation-name: slideInLeft;
   animation-duration: 2s;
   animation-iteration-count: 1;
   animation-play-state: initial;
   animation-timing-function: ease-in;
-
 }
 
 @keyframes slideInLeft {

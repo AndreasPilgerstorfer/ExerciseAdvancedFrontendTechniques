@@ -1,0 +1,18 @@
+$hotel-colors: (
+  white: #FFFFFF,
+  dark-blue: #20214f,
+  gold: goldenrod,
+  beige: #DAC089,
+  teal: #169897,
+  orange: #F39C12,
+  dark-orange: #ec9004,
+);
+
+@function hotel-colors($identifier: primary) {
+  @if map-has-key($hotel-colors, $identifier) {
+    @return map-get($hotel-colors, $identifier);
+  }
+
+  @error "Unsupported color name #{$identifier}";
+}
+
