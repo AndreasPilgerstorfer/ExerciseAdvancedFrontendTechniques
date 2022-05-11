@@ -77,5 +77,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);       // wird bei grunt ausgeführt
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin']);       // wird bei grunt ausgeführt
 };
