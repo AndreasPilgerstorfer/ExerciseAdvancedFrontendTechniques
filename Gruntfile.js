@@ -37,6 +37,36 @@ module.exports = function(grunt) {
                     'public/main.css': 'assets/scss/main.scss',       // 'destination': 'source'
                 }
             }
+        },
+        imagemin: {
+            png: {
+                options: {
+                    optimizationLevel: 7
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/img/',
+                        src: ['**/*.png'],
+                        dest: 'public/img/',
+                        ext: '.png'
+                    }
+                ]
+            },
+            jpg: {
+                options: {
+                    progressive: true
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'assets/img/',
+                        src: ['**/*.jpg','**/*.jpeg'],
+                        dest: 'public/img/',
+                        ext: '.jpg'
+                    }
+                ]
+            }
         }
     });
 
@@ -45,7 +75,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-
-    grunt.registerTask('default', ['sass', 'cssmin', 'uglify']);       // wird bei nur grunt ausgeführt
+    grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin']);       // wird bei grunt ausgeführt
 };
