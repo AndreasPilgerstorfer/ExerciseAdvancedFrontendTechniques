@@ -1,0 +1,8 @@
+@mixin welcome-background-image($name, $url, $minHeight, $size: cover) {
+  .welcome-#{$name} {
+    background-image: url($url);
+    min-height: #{$minHeight}px;
+    background-size: $size;
+  }
+}
+

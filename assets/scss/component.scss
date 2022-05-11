@@ -1,38 +1,14 @@
 /* --------------------------------------------------- Allgemein  ----------------------------------------------------*/
-body{
+body {
   background-color: hotel-colors(dark-blue) ;
   font-family: 'Roboto', sans-serif;
 }
 
-.welcome-header {
-  background-image: url("./img/pic01.jpg");
-  min-height: 650px;
-  background-size: cover;
-}
-
-.welcome-header2 {
-  background-image: url("./img/pic01.jpg");
-  min-height: 390px;
-  background-size: cover;
-}
-
-.welcome-room {
-  background-image: url("./img/pic02.jpg");
-  min-height: 650px;
-  background-size: cover;
-}
-
-.welcome-bath {
-  background-image: url("./img/pic03.jpg");
-  min-height: 650px;
-  background-size: cover;
-}
-
-.welcome-suite {
-  background-image: url("./img/pic04.jpg");
-  min-height: 650px;
-  background-size: cover;
-}
+@include welcome-background-image("header", "./img/pic01.jpg", 650, cover);
+@include welcome-background-image("header2", "./img/pic01.jpg", 390, cover);
+@include welcome-background-image("room", "./img/pic02.jpg", 650, cover);
+@include welcome-background-image("bath", "./img/pic03.jpg", 650, cover);
+@include welcome-background-image("suite", "./img/pic04.jpg", 650, cover);
 
 .custom-bg {
   background-color: rgba(0,0,0, .75);
@@ -65,7 +41,7 @@ body{
   color: hotel-colors(gold);
 }
 
-.spacer{
+.spacer {
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -77,13 +53,13 @@ body{
   font-weight: bold;
 }
 
-.page-item.active .page-link{
+.page-item.active .page-link {
   background-color: hotel-colors(gold);
   color: black;
   border-color: hotel-colors(gold);
 }
 
-.page-link{
+.page-link {
   color: black;
 
   &:hover, &:focus, &:active {
@@ -153,7 +129,6 @@ a {
   }
 }
 
-/*  Hover-Button  */
 .btnstyle {
   background-color: hotel-colors(gold);
   padding: .5em;
@@ -164,6 +139,13 @@ a {
   &:hover, &:active, &:focus {
     background-color: hotel-colors(beige);
   }
+}
+
+.submit-btn {
+  @extend .btnstyle;
+
+  background-color: hotel-colors(dark-blue);
+  color: white;
 }
 
 
