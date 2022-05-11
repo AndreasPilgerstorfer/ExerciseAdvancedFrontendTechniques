@@ -67,20 +67,6 @@ module.exports = function(grunt) {
                     }
                 ]
             }
-        },
-        htmlmin: {
-            dist: {
-                options: {
-                    removeComments: true,
-                    collapseWhitespace: true
-                },
-                files: {
-                    'public/index.html': './index.html',
-                    'public/ueberUns.html': './ueberUns.html',
-                    'public/ueberUns2.html': './ueberUns2.html',
-                    'public/ueberUns3.html': './ueberUns3.html',
-                }
-            },
         }
     });
 
@@ -90,7 +76,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
-    grunt.loadNpmTasks('grunt-contrib-htmlmin');
 
     grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin', 'htmlmin']);       // wird bei grunt ausgeführt
 };
