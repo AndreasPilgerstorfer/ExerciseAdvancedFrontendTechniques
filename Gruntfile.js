@@ -1,5 +1,4 @@
 module.exports = function(grunt) {
-
     grunt.initConfig({
         uglify: {
             my_target: {
@@ -78,7 +77,7 @@ module.exports = function(grunt) {
         }
     });
 
-    // Hier definert man die Tasks, dass man sie auch benutzen kann
+    // Hier definiert man die Tasks, dass man sie auch benutzen kann
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -87,5 +86,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-concurrent');
 
     grunt.registerTask('default', ['concurrent:target1']);
-    //grunt.registerTask('default', ['sass', 'cssmin', 'uglify', 'imagemin']);       // wird bei grunt ausgeführt
 };
